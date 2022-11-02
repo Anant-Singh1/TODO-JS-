@@ -51,6 +51,7 @@
             <div class="modal-body">
               <p>Task Title</p>
               <input class="form-control" type="text" id="text-input" />
+              <div id="message"></div>
               <br />
               <p>Due Date</p>
               <input class="form-control" type="date" name="" id="date-input" />
@@ -60,7 +61,7 @@
               <textarea
                 class="form-control"
                 name=""
-                id="textarea"
+                id="text-area"
                 cols="30"
                 rows="5"
               ></textarea>
@@ -73,7 +74,9 @@
               >
                 Close
               </button>
-              <button type="submit" class="btn btn-primary">Add</button>
+              <button type="submit" id="add" class="btn btn-primary">
+                Add
+              </button>
             </div>
           </div>
         </div>
@@ -85,8 +88,13 @@
           <span class="date">2022-1-20</span>
           <p>Go for a walk</p>
           <span class="options">
-            <i class="fas fa-edit"></i>
-            <i class="fas fa-trash-alt"></i>
+            <i
+              data-bs-toggle="modal"
+              data-bs-target="#form"
+              class="fas fa-edit"
+              onClick="edittask(this)"
+            ></i>
+            <i onClick="deletetask(this)" class="fas fa-trash-alt"></i>
           </span>
         </div>
         <div>
@@ -94,7 +102,13 @@
           <span class="date">2022-1-20</span>
           <p>Go for a walk</p>
           <span class="options"
-            ><i class="fas fa-edit"></i> <i class="fas fa-trash-alt"></i
+            ><i
+              data-bs-toggle="modal"
+              data-bs-target="#form"
+              class="fas fa-edit"
+              onClick="edittask(this)"
+            ></i>
+            <i onClick="deletetask(this)" class="fas fa-trash-alt"></i
           ></span>
         </div>
       </div>
